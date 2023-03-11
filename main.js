@@ -12,7 +12,7 @@ async function fetchData() {
     }
   };
 
-  data.results.forEach((item) => {
+  data.results.forEach((item, index) => {
     const nombre = document.createElement("h5");
     nombre.className = "card-title";
     nombre.textContent = `Name: ${item.name}`;
@@ -26,7 +26,7 @@ async function fetchData() {
     gender.textContent = `Gender: ${item.gender}`;
 
     const imagen = document.createElement("img");
-    imagen.src = `${API}/avatar/${image()}.jpeg`;
+    imagen.src = `${API}/avatar/${index+1}.jpeg`;
     imagen.className = "card-img-top";
 
     const cardBody = document.createElement("div");
